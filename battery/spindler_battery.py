@@ -1,4 +1,4 @@
-from .battery import Battery
+from battery.battery import Battery
 
 
 class SpindlerBattery(Battery):
@@ -7,4 +7,4 @@ class SpindlerBattery(Battery):
         self.__current_date = current_date
 
     def needs_service(self):
-        return self.__last_service_date.replace(year=self.last_service_date.year + 4) < self.__current_date
+        return self.__last_service_date.replace(year=self.__last_service_date.year + 2) < self.__current_date

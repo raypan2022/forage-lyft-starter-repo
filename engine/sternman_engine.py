@@ -1,10 +1,9 @@
-from .engine import Engine
+from engine.engine import Engine
 
 
 class SternmanEngine(Engine):
-    def __init__(self, last_service_mileage, current_mileage):
-        self.__last_service_mileage = last_service_mileage
-        self.__current_mileage = current_mileage
+    def __init__(self, warning_light_is_on):
+        self.__warning_light_is_on = warning_light_is_on
 
     def needs_service(self):
-        return self.__current_mileage - self.__last_service_mileage > 60000
+        return self.__warning_light_is_on
